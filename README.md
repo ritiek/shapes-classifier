@@ -80,6 +80,9 @@ to `predict.py`. For example
 $ python predict.py 1.png 2.png
 ```
 
+The model attains an accuracy of ~95% but it doesn't seem to perform well on images outside
+the dataset, probably because the images in the dataset are not diverse enough to generalize better.
+
 ## License
 
 `The MIT License`
