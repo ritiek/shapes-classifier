@@ -15,10 +15,10 @@ def load_data(directory, subdirectory):
         one_hot_arr_img = preprocessing.utils.to_categorical(arr_img, 256)
         dataset.append(one_hot_arr_img)
 
-    directory_labels = { 'circles'   : 0,
-                         'squares'   : 1,
-                         'stars'     : 2,
-                         'triangles' : 3 }
+    directory_labels = { 'circle'   : 0,
+                         'square'   : 1,
+                         'star'     : 2,
+                         'triangle' : 3 }
 
     directory_label = directory_labels[directory]
 
@@ -36,29 +36,29 @@ def unison_shuffled_copies(a, b):
 
 # TRAIN DATA
 
-circles_train_data, circles_train_labels = load_data('circles', 'train')
-squares_train_data, squares_train_labels = load_data('squares', 'train')
-stars_train_data, stars_train_labels = load_data('stars', 'train')
-triangles_train_data, triangles_train_labels = load_data('triangles', 'train')
+circle_train_data, circle_train_labels = load_data('circle', 'train')
+square_train_data, square_train_labels = load_data('square', 'train')
+star_train_data, star_train_labels = load_data('star', 'train')
+triangle_train_data, triangle_train_labels = load_data('triangle', 'train')
 
-train_data = np.array(circles_train_data +
-                      squares_train_data +
-                      stars_train_data +
-                      triangles_train_data)
+train_data = np.array(circle_train_data +
+                      square_train_data +
+                      star_train_data +
+                      triangle_train_data)
 
-train_labels = np.array(circles_train_labels +
-                        squares_train_labels +
-                        stars_train_labels +
-                        triangles_train_labels)
+train_labels = np.array(circle_train_labels +
+                        square_train_labels +
+                        star_train_labels +
+                        triangle_train_labels)
 
-del circles_train_data
-del circles_train_labels
-del squares_train_data
-del squares_train_labels
-del stars_train_data
-del stars_train_labels
-del triangles_train_data
-del triangles_train_labels
+del circle_train_data
+del circle_train_labels
+del square_train_data
+del square_train_labels
+del star_train_data
+del star_train_labels
+del triangle_train_data
+del triangle_train_labels
 
 train_data, train_labels = unison_shuffled_copies(train_data, train_labels)
 
@@ -80,25 +80,25 @@ model.compile(optimizer='rmsprop',
 
 # VALIDATION DATA
 
-circles_validation_data, circles_validation_labels = load_data('circles', 'validation')
-squares_validation_data, squares_validation_labels = load_data('squares', 'validation')
-stars_validation_data, stars_validation_labels = load_data('stars', 'validation')
-triangles_validation_data, triangles_validation_labels = load_data('triangles', 'validation')
+circle_validation_data, circle_validation_labels = load_data('circle', 'validation')
+square_validation_data, square_validation_labels = load_data('square', 'validation')
+star_validation_data, star_validation_labels = load_data('star', 'validation')
+triangle_validation_data, triangle_validation_labels = load_data('triangle', 'validation')
 
-validation_data = np.array(circles_validation_data +
-                      squares_validation_data +
-                      stars_validation_data +
-                      triangles_validation_data)
+validation_data = np.array(circle_validation_data +
+                      square_validation_data +
+                      star_validation_data +
+                      triangle_validation_data)
 
-validation_labels = np.array(circles_validation_labels +
-                        squares_validation_labels +
-                        stars_validation_labels +
-                        triangles_validation_labels)
+validation_labels = np.array(circle_validation_labels +
+                        square_validation_labels +
+                        star_validation_labels +
+                        triangle_validation_labels)
 
-del circles_validation_data
-del circles_validation_labels
-del squares_validation_data
-del squares_validation_labels
+del circle_validation_data
+del circle_validation_labels
+del square_validation_data
+del square_validation_labels
 
 validation_data, validation_labels = unison_shuffled_copies(validation_data, validation_labels)
 
@@ -117,29 +117,29 @@ del validation_labels
 
 # TEST DATA
 
-circles_test_data, circles_test_labels = load_data('circles', 'test')
-squares_test_data, squares_test_labels = load_data('squares', 'test')
-stars_test_data, stars_test_labels = load_data('stars', 'test')
-triangles_test_data, triangles_test_labels = load_data('triangles', 'test')
+circle_test_data, circle_test_labels = load_data('circle', 'test')
+square_test_data, square_test_labels = load_data('square', 'test')
+star_test_data, star_test_labels = load_data('star', 'test')
+triangle_test_data, triangle_test_labels = load_data('triangle', 'test')
 
-test_data = np.array(circles_test_data +
-                     squares_test_data +
-                     stars_test_data +
-                     triangles_test_data)
+test_data = np.array(circle_test_data +
+                     square_test_data +
+                     star_test_data +
+                     triangle_test_data)
 
-test_labels = np.array(circles_test_labels +
-                       squares_test_labels +
-                       stars_test_labels +
-                       triangles_test_labels)
+test_labels = np.array(circle_test_labels +
+                       square_test_labels +
+                       star_test_labels +
+                       triangle_test_labels)
 
-del circles_test_data
-del circles_test_labels
-del squares_test_data
-del squares_test_labels
-del stars_test_data
-del stars_test_labels
-del triangles_test_data
-del triangles_test_labels
+del circle_test_data
+del circle_test_labels
+del square_test_data
+del square_test_labels
+del star_test_data
+del star_test_labels
+del triangle_test_data
+del triangle_test_labels
 
 test_data, test_labels = unison_shuffled_copies(test_data, test_labels)
 

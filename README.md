@@ -1,6 +1,6 @@
 # shapes-classifier
 
-A simple shape classifier in Keras using Convolutional 2D to classify
+A simple shape classifier in Keras using Convolutional 2D networks to classify
 shapes from 4 different categories (circles, squares, stars and triangles).
 
 ## Usage
