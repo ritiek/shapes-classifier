@@ -3,6 +3,7 @@
 A simple shape classifier in Keras using Convolutional 2D networks to classify
 shapes from 4 different categories (circles, squares, stars and triangles).
 
+
 ## Usage
 
 ### Downloading the code
@@ -69,3 +70,8 @@ $ python train.py
 It took me about 2 minutes to run this command on CPU on my 4 year-old laptop. This will
 also save the resultant model as `shapes_classifier.h5` (There is also a
 pre-trained model already included in this repo).
+
+
+## License
+
+`The MIT License`
