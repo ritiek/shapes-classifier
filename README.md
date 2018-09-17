@@ -47,6 +47,7 @@ directories alont with our code such that your current directory tree looks like
 │
 ├── train.py
 ├── mover.py
+├── predict.py
 ├── README.md
 ├── shapes_classifier.h5
 ```
@@ -71,6 +72,13 @@ It took me about 2 minutes to run this command on CPU on my 4 year-old laptop. T
 also save the resultant model as `shapes_classifier.h5` (There is also a
 pre-trained model already included in this repo).
 
+### Predicting images
+
+You can load this saved model and make predictions on images by passing them as arguments
+to `predict.py`. For example
+```
+$ python predict.py 1.png 2.png
+```
 
 ## License
 
