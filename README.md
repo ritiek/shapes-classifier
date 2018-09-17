@@ -23,22 +23,22 @@ directories alont with our code such that your current directory tree looks like
 
 ```
 .
-├── circles
+├── circle
 │   ├── 1.png
 │   ├── 2.png
 │   ├── 3.png
 │   └── ...
-├── squares
+├── square
 │   ├── 1.png
 │   ├── 2.png
 │   ├── 3.png
 │   └── ...
-├── stars
+├── star
 │   ├── 1.png
 │   ├── 2.png
 │   ├── 3.png
 │   └── ...
-├── triangles
+├── triangle
 │   ├── 1.png
 │   ├── 2.png
 │   ├── 3.png

@@ -1,6 +1,9 @@
 import os
 
 def move_all(shape, data_type):
+    dirpath = os.path.join(shape, data_type)
+    if not os.path.isdir(dirpath):
+        os.makedirs(dirpath)
     for x in os.listdir(shape):
         if x.endswith('.png'):
             os.rename(os.path.join(shape, x), os.path.join(shape, data_type, x))
