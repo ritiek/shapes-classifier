@@ -20,7 +20,7 @@ $ cd shapes-classifier/
 The dataset is available freely on Kaggle - https://www.kaggle.com/smeschke/four-shapes.
 
 Download this dataset, extract `shapes.zip` and place the resultant shape
-directories alont with our code such that your current directory tree looks like this:
+directories along with the code such that your current directory tree looks like this:
 
 ```
 .
