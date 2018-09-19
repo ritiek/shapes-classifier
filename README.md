@@ -69,16 +69,16 @@ $ python train.py
 ```
 
 For preparing the model, it will use 70% of `train` images for training purposes and
-the remaning 30% images for validation purposes.
+the remaning 30% of `train` images for validation purposes.
 
 It took me about 2 minutes to run this command on CPU on my 4 year-old laptop. This will
 also save the resultant model as `shapes_classifier.h5` (There is also a
-pre-trained model already included in this repo).
+pre-trained model already included in this repo) and make predictions on `test` images.
 
 ### Predicting images
 
-You can load this saved model and make predictions on images by passing them as arguments
-to `predict.py`. For example
+You can load this saved model and make predictions on your images by passing them as
+arguments to `predict.py`. For example
 ```
 $ python predict.py 1.png 2.png
 ```
