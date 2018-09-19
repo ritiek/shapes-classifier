@@ -58,8 +58,8 @@ Once, you've got your directory structured as above. Run
 ```
 $ python mover.py
 ```
-to split images for each shape into training (3000 images), validation (500 images)
-and test (remaining images) sub-directories.
+to randomly split 3000 images per shape into `train` and the remaning ~750 images per
+shape into `test` directories.
 
 ### Training the model
 
@@ -67,6 +67,9 @@ You can now train the model with:
 ```
 $ python train.py
 ```
+
+For preparing the model, it will use 70% of `train` images for training purposes and
+the remaning 30% images for validation purposes.
 
 It took me about 2 minutes to run this command on CPU on my 4 year-old laptop. This will
 also save the resultant model as `shapes_classifier.h5` (There is also a
@@ -80,8 +83,9 @@ to `predict.py`. For example
 $ python predict.py 1.png 2.png
 ```
 
-The model attains an accuracy of ~95% but it doesn't seem to perform well on images outside
-the dataset, probably because the images in the dataset are not diverse enough to generalize better.
+The model attains an accuracy of ~97% but it doesn't seem to perform well on images outside
+the dataset, probably because the images in the dataset are not diverse enough to generalize
+better (they comprise of only filled shapes).
 
 ## License
 
