@@ -8,7 +8,7 @@ def load_image(image):
                                        color_mode='grayscale',
                                        target_size=(10,10))
     arr_img = preprocessing.image.img_to_array(img)
-    return np.expand_dims(arr_img, axis=0)
+    return arr_img
 
 filenames = sys.argv[1:]
 images = []
@@ -17,12 +17,10 @@ for filename in filenames:
     image = load_image(filename)
     images.append(image)
 
-images = np.vstack(images)
-
 from keras import models
 
 model = models.load_model('shapes_classifier.h5')
-prediction = model.predict(images)
+prediction = model.predict(np.array(images))
 
 for x in range(len(prediction)):
     for y in range(len(prediction[x])):
