@@ -8,8 +8,7 @@ def load_image(image):
                                        color_mode='grayscale',
                                        target_size=(10,10))
     arr_img = preprocessing.image.img_to_array(img)
-    one_hot_arr_img = preprocessing.utils.to_categorical(arr_img, 256)
-    return one_hot_arr_img
+    return np.expand_dims(arr_img, axis=0)
 
 filenames = sys.argv[1:]
 images = []
@@ -18,7 +17,7 @@ for filename in filenames:
     image = load_image(filename)
     images.append(image)
 
-images = np.array(images)
+images = np.vstack(images)
 
 from keras import models
 
