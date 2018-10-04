@@ -5,7 +5,14 @@ import os
 # TRAIN & VALIDATION DATA
 
 train_datagen = preprocessing.image.ImageDataGenerator(rescale=1./255,
-                                                    validation_split=0.3)
+                                                       rotation_range=40,
+                                                       width_shift_range=0.2,
+                                                       height_shift_range=0.2,
+                                                       shear_range=0.2,
+                                                       zoom_range=0.2,
+                                                       horizontal_flip=True,
+                                                       fill_mode='nearest',
+                                                       validation_split=0.3)
 
 print('Preparing training data')
 train_generator = train_datagen.flow_from_directory('train/',
@@ -38,7 +45,7 @@ model.compile(optimizer='rmsprop',
               metrics=['accuracy'])
 
 
-model.fit_generator(train_generator, epochs=2,
+model.fit_generator(train_generator, epochs=10,
                     validation_data=validation_generator)
 
 model.save('shapes_classifier.h5')
